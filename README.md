@@ -1,4 +1,22 @@
-# ORB-SLAM3
+# ORB-SLAM3 Modified
+
+**Disclaimer:** I do not own the original ORB SLAM3 project, nor have I developed any code in the original ORB SLAM3 project. I have created this repository to modify the original project's code for personal convenience.
+
+**Original Source:** https://github.com/UZ-SLAMLab/ORB_SLAM3
+
+## Prerequisites
+
+**Ubuntu:** 20.04 LTS Focal Fox (supports qt5-default for OpenCV 4.4.0)
+**RAM:** Estimated 6 GB
+
+## Build Steps
+
+TODO: 
+
+
+
+
+# ORB-SLAM3 (Original README.md)
 
 ### V1.0, December 22th, 2021
 **Authors:** Carlos Campos, Richard Elvira, Juan J. Gómez Rodríguez, [José M. M. Montiel](http://webdiis.unizar.es/~josemari/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/).
