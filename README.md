@@ -7,6 +7,7 @@
 ## Prerequisites
 
 **Ubuntu:** 20.04 LTS Focal Fox (supports qt5-default for OpenCV 4.4.0)
+
 **RAM:** Estimated 6 GB
 
 ## Build Steps
