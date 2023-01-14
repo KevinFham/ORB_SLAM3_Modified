@@ -2,7 +2,7 @@
 
 **Disclaimer:** I do not own the original ORB SLAM3 project, nor have I developed any code in the original ORB SLAM3 project. I have created this repository to modify the original project's code for personal convenience.
 
-**Original Source:** https://github.com/UZ-SLAMLab/ORB_SLAM3
+**Original Project:** https://github.com/UZ-SLAMLab/ORB_SLAM3
 
 ## Prerequisites
 
