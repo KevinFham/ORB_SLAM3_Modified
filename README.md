@@ -16,9 +16,11 @@
 
 sudo apt install build-essential git make cmake pkg-config python3-dev python3-pip wget 
 
+
 **OpenCV4.4.0 Package Dependencies**
 
 sudo apt install qt5-default libeigen3-dev libgl1-mesa-dev libglew-dev libblas-dev liblapack-dev libboost-all-dev libssl-dev
+
 
 **Building ORB_SLAM3_Modified**
 
@@ -30,6 +32,7 @@ chmod +x build.sh
 
 sudo ./build.sh
 
+
 ## Optional Build Steps
 
 ### Adjust Computational Power
@@ -37,6 +40,7 @@ sudo ./build.sh
 gedit build.sh
 
 (Change instances of "make -j4" to any number of cores you would like to use)
+
 
 ### Download Test Data (EuRoC dataset)
 
