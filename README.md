@@ -5,20 +5,16 @@
 **Original Project:** https://github.com/UZ-SLAMLab/ORB_SLAM3
 
 ## Prerequisites
-
 **Ubuntu:** 20.04 LTS Focal Fossa (supports qt5-default for OpenCV 4.4.0)
 
 **RAM:** Estimated 6 GB
 
 ## Building
-
 **Basic Building Tools**
-
 sudo apt install build-essential git make cmake pkg-config python3-dev python3-pip wget 
 
 
 **OpenCV4.4.0 Package Dependencies**
-
 sudo apt install qt5-default libeigen3-dev libgl1-mesa-dev libglew-dev libblas-dev liblapack-dev libboost-all-dev libssl-dev
 
 
