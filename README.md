@@ -6,13 +6,55 @@
 
 ## Prerequisites
 
-**Ubuntu:** 20.04 LTS Focal Fox (supports qt5-default for OpenCV 4.4.0)
+**Ubuntu:** 20.04 LTS Focal Fossa (supports qt5-default for OpenCV 4.4.0)
 
 **RAM:** Estimated 6 GB
 
-## Build Steps
+## Building
 
-TODO: 
+**Basic Building Tools**
+
+sudo apt install build-essential git make cmake pkg-config python3-dev python3-pip wget 
+
+**OpenCV4.4.0 Package Dependencies**
+
+sudo apt install qt5-default libeigen3-dev libgl1-mesa-dev libglew-dev libblas-dev liblapack-dev libboost-all-dev libssl-dev
+
+**Building ORB_SLAM3_Modified**
+
+git clone https://github.com/KevinFham/ORB_SLAM3_Modified.git (FOLDER_NAME)
+
+cd (FOLDER_NAME)
+
+chmod +x build.sh
+
+sudo ./build.sh
+
+## Optional Build Steps
+
+### Adjust Computational Power
+
+gedit build.sh
+
+(Change instances of "make -j4" to any number of cores you would like to use)
+
+### Download Test Data (EuRoC dataset)
+
+cd (DATASETS_FOLDER_PARENT)
+
+mkdir -p Datasets/EuRoc 
+
+cd Datasets/EuRoc/
+
+wget -c http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/machine_hall/MH_01_easy/MH_01_easy.zip
+
+mkdir MH01
+
+unzip MH_01_easy.zip -d MH01/
+
+cd (ORB_SLAM3_FOLDER_NAME)
+
+./Examples/Monocular/mono_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular/EuRoC.yaml (DATASETS_FOLDER_PARENT)/Datasets/EuRoc/MH01 ./Examples/Monocular/EuRoC_TimeStamps/MH01.txt dataset-MH01_mono
 
 
 --------------------------------------------------
