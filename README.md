@@ -36,7 +36,7 @@ sudo ./build.sh
 ```
 gedit build.sh
 ```
-(Change instances of "make -j4" to any number of cores you would like to use)
+(Change instances of "make -j4" to any number of cores you would like to use. Be mindful, as more cores will use up more RAM)
 
 ## Download Test Data (EuRoC dataset)
 ```
