@@ -4,13 +4,13 @@
 
 **Original Project:** https://github.com/UZ-SLAMLab/ORB_SLAM3
 
-## Prerequisites
+# Prerequisites
 
 **Ubuntu:** 20.04 LTS Focal Fossa (supports qt5-default for OpenCV 4.4.0)
 
 **RAM:** Estimated 6 GB
 
-## Building
+# Building
 
 **Basic Building Tools**
 ```
@@ -30,15 +30,15 @@ chmod +x build.sh
 sudo ./build.sh
 ```
 
-## Optional Build Steps
+# Optional Build Steps
 
-### Adjust Computational Power
+## Adjust Computational Power
 ```
 gedit build.sh
 ```
 (Change instances of "make -j4" to any number of cores you would like to use)
 
-### Download Test Data (EuRoC dataset)
+## Download Test Data (EuRoC dataset)
 ```
 cd (DATASETS_FOLDER_PARENT)
 mkdir -p Datasets/EuRoc 
