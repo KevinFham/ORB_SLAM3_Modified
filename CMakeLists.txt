@@ -389,3 +389,14 @@ if(realsense2_FOUND)
             Examples_old/Stereo-Inertial/stereo_inertial_realsense_D435i.cc)
     target_link_libraries(stereo_inertial_realsense_D435i_old ${PROJECT_NAME})
 endif()
+
+######TESTING########
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Camera)
+
+add_executable(test
+	Camera/test.cc)
+target_link_libraries(test ${PROJECT_NAME})
+
+add_executable(cameratest
+	Camera/cameratest.cc)
+target_link_libraries(cameratest ${PROJECT_NAME})
