@@ -23,8 +23,6 @@ sudo apt install qt5-default libeigen3-dev libgl1-mesa-dev libglew-dev libblas-d
 ```
 
 **ORB_SLAM3_Modified Dependencies**
-
-First, compile the dependencies
 ```
 git clone https://github.com/KevinFham/ORB_SLAM3_Modified.git (FOLDER_NAME)
 cd (FOLDER_NAME)
