@@ -23,23 +23,30 @@ sudo apt install qt5-default libeigen3-dev libgl1-mesa-dev libglew-dev libblas-d
 ```
 
 **Building ORB_SLAM3_Modified**
+First, compile the dependencies
 ```
 git clone https://github.com/KevinFham/ORB_SLAM3_Modified.git (FOLDER_NAME)
 cd (FOLDER_NAME)
-chmod +x build.sh
-sudo ./build.sh
+chmod +x build_depend.sh
+sudo ./build_depend.sh
+```
+
+Then, build the custom executable programs
+```
+chmod +x build_custom.sh
+sudo ./build_custom.sh
 ```
 
 # Optional Build Steps
 
 ## Adjust Computational Power
 ```
-gedit build.sh
+gedit (buildfile).sh
 ```
-(Change instances of "make -j4" to any number of cores you would like to use. Be mindful, as more cores will use up more RAM)
+Change instances of "make -j4" to any number of cores you would like to use. Be mindful, as more cores will use up more RAM
 
 ## Build Example Programs
-(Requires running build.sh first)
+(Requires running build_depend.sh first)
 ```
 chmod +x build_examples.sh
 sudo ./build_examples.sh
