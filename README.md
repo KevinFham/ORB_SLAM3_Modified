@@ -22,7 +22,8 @@ sudo apt install build-essential git make cmake pkg-config python3-dev python3-p
 sudo apt install qt5-default libeigen3-dev libgl1-mesa-dev libglew-dev libblas-dev liblapack-dev libboost-all-dev libssl-dev
 ```
 
-**Building ORB_SLAM3_Modified**
+**ORB_SLAM3_Modified Dependencies**
+
 First, compile the dependencies
 ```
 git clone https://github.com/KevinFham/ORB_SLAM3_Modified.git (FOLDER_NAME)
@@ -31,7 +32,7 @@ chmod +x build_depend.sh
 sudo ./build_depend.sh
 ```
 
-Then, build the custom executable programs
+**Custom Executable Programs**
 ```
 chmod +x build_custom.sh
 sudo ./build_custom.sh
