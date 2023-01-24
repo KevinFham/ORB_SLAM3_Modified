@@ -38,7 +38,15 @@ gedit build.sh
 ```
 (Change instances of "make -j4" to any number of cores you would like to use. Be mindful, as more cores will use up more RAM)
 
-## Download Test Data (EuRoC dataset)
+## Build Example Programs
+(Requires running build.sh first)
+```
+chmod +x build_examples.sh
+sudo ./build_examples.sh
+```
+
+## Download and Run Test Data (EuRoC dataset)
+(Requires running build_examples.sh first)
 ```
 cd (DATASETS_FOLDER_PARENT)
 mkdir -p Datasets/EuRoc 
