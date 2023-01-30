@@ -22,23 +22,37 @@ sudo apt install build-essential git make cmake pkg-config python3-dev python3-p
 sudo apt install qt5-default libeigen3-dev libgl1-mesa-dev libglew-dev libblas-dev liblapack-dev libboost-all-dev libssl-dev
 ```
 
-**Building ORB_SLAM3_Modified**
+**ORB_SLAM3_Modified Dependencies**
 ```
 git clone https://github.com/KevinFham/ORB_SLAM3_Modified.git (FOLDER_NAME)
 cd (FOLDER_NAME)
-chmod +x build.sh
-sudo ./build.sh
+chmod +x build_depend.sh
+sudo ./build_depend.sh
+```
+
+**Custom Executable Programs**
+```
+chmod +x build_custom.sh
+sudo ./build_custom.sh
 ```
 
 # Optional Build Steps
 
 ## Adjust Computational Power
 ```
-gedit build.sh
+gedit (buildfile).sh
 ```
-(Change instances of "make -j4" to any number of cores you would like to use. Be mindful, as more cores will use up more RAM)
+Change instances of "make -j4" to any number of cores you would like to use. Be mindful, as more cores will use up more RAM
 
-## Download Test Data (EuRoC dataset)
+## Build Example Programs
+(Requires running build_depend.sh first)
+```
+chmod +x build_examples.sh
+sudo ./build_examples.sh
+```
+
+## Download and Run Test Data (EuRoC dataset)
+(Requires running build_examples.sh first)
 ```
 cd (DATASETS_FOLDER_PARENT)
 mkdir -p Datasets/EuRoc 
