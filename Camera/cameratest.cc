@@ -7,8 +7,10 @@
 #include<fstream>
 #include<chrono>
 #include<string>
+#include<unistd.h>
 
 #include<opencv2/core/core.hpp>
+#include<opencv2/videoio/videoio.hpp>
 
 #include<System.h>
 #include <Converter.h>
@@ -33,6 +35,8 @@ int main(int argc, char **argv)
 
     //Run ORB SLAM with connected computer camera source
     if (str0.compare(argv[1]) == 0) {
+    	cerr << endl << "Running ORB SLAM with webcam (cameratest.cc)" << endl;
+    	
         if(argc != 4) {
             cerr << endl << "argc:" << argc << "!= 4"<< endl;
         }
@@ -40,9 +44,11 @@ int main(int argc, char **argv)
         cv::VideoCapture cap(0);
 
         if (!cap.isOpened()) {
-            cerr << endl << "Could not open camera feed." << endl;
-            return -1;
+            cerr << endl << "Could not open camera feed. (cameratest.cc)" << endl;
+           return -1;
         }
+        
+        
         ORB_SLAM3::System SLAM(argv[2], argv[3], ORB_SLAM3::System::MONOCULAR, true);
         cout << endl << "-------" << endl;
         cout << "Start processing sequence ..." << endl;
@@ -97,16 +103,32 @@ int main(int argc, char **argv)
 
     //Run ORB SLAM with drone camera source
     if (str1.compare(argv[1]) == 0) {
+    	cerr << endl << "Running ORB SLAM with drone (cameratest.cc)" << endl;
+    
         if(argc != 4) {
             cerr << endl << "argc:" << argc << "!= 4"<< endl;
         }
-
-        cv::VideoCapture cap("udp://@0.0.0.0:11111?overrun_nonfatal=1&fifo_size=50000000");
-
+	
+        cv::VideoCapture cap("udp://@0.0.0.0:11111?overrun_nonfatal=1&fifo_size=5000");
+	
+	
         if (!cap.isOpened()) {
-            cerr << endl << "Could not open camera feed." << endl;
-            return -1;
+            cerr << endl << "Could not open camera feed; Reattempting... (cameratest.cc)" << endl;
+            
+            cap.open("udp://@0.0.0.0:11111?overrun_nonfatal=1&fifo_size=5000");
         }
+        
+        //Loop until camera feed is found
+        cv::Mat frame;
+        while(true){
+            sleep(1);
+            cap >> frame;
+            if(!frame.empty()){
+                break;
+            }
+            cout << "Finding Feed" << endl;
+        }
+        
         ORB_SLAM3::System SLAM(argv[2], argv[3], ORB_SLAM3::System::MONOCULAR, true);
         cout << endl << "-------" << endl;
         cout << "Start processing sequence ..." << endl;
