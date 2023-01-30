@@ -403,3 +403,7 @@ target_link_libraries(test ${PROJECT_NAME})
 add_executable(cameratest
 	Camera/cameratest.cc)
 target_link_libraries(cameratest ${PROJECT_NAME})
+
+add_executable(telloCam
+	Camera/telloCam.cc)
+target_link_libraries(telloCam ${PROJECT_NAME})
